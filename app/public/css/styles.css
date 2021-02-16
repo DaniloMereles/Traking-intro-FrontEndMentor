@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow&display=swap");
+:root {
+  --VeryDarkBlue: hsl(230, 29%, 20%);
+  --DarkGrayishBlue: hsl(230, 11%, 40%);
+  --GrayishBlue: hsl(231, 7%, 65%);
+  --LightGrayishBlue: hsl(207, 33%, 95%);
+  --Red: hsl(0, 100%, 68%);
+  --White: #ffff; }
+
+:root {
+  --Barlow: 'Barlow', sans-serif;
+  --BarlowCondensed: 'Barlow Condensed', sans-serif; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-size: 18px;
+  font-family: var(--Barlow);
+  background-color: var(--White); }
+
+a {
+  text-decoration: none; }
+
+.btn {
+  display: inline-block;
+  width: 170px;
+  height: 45px;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--Red);
+  font-size: 17px;
+  letter-spacing: 1px;
+  color: var(--White);
+  font-family: var(--BarlowCondensed);
+  font-weight: 700; }
+  @media (max-width: 450px) {
+    .btn {
+      width: 130px;
+      font-size: 14px; } }
+
+.btn.secundary {
+  display: inline-block;
+  width: 250px;
+  background-color: var(--White);
+  font-family: var(--Barlow);
+  font-weight: 400;
+  color: var(--GrayishBlue); }
+  @media (max-width: 450px) {
+    .btn.secundary {
+      width: 200px;
+      text-align: center;
+      font-size: 14px; } }
+
+.main {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: 10;
+  overflow: hidden; }
+
+.main::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  right: -5px;
+  top: -40px;
+  width: 54%;
+  height: 410px;
+  border-bottom-left-radius: 45px;
+  background-color: var(--LightGrayishBlue);
+  background-size: 100%; }
+
+.navbar {
+  width: 100%;
+  height: 80px;
+  padding-left: 80px;
+  padding-right: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .navbar__logo {
+    cursor: pointer; }
+  .navbar__links .link {
+    margin-right: 50px;
+    font-family: var(--BarlowCondensed);
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 16px;
+    color: var(--VeryDarkBlue); }
+    .navbar__links .link:hover {
+      border-bottom: 2px solid var(--VeryDarkBlue); }
+    .navbar__links .link:last-child {
+      color: var(--GrayishBlue); }
+      .navbar__links .link:last-child:hover {
+        border-bottom: 2px solid var(--GrayishBlue); }
+  .navbar__links .line {
+    display: none; }
+  .navbar__hamburger {
+    display: none; }
+
+@media (max-width: 800px) {
+  .navbar {
+    width: 100%;
+    height: 80px;
+    padding-left: 25px;
+    padding-right: 25px;
+    display: flex;
+    justify-content: space-between;
+    position: relative; }
+    .navbar__links {
+      width: 90%;
+      height: 55vh;
+      z-index: 20;
+      border-radius: 5px;
+      background-color: var(--White);
+      box-shadow: -8px 181px 300px -45px rgba(0, 0, 0, 0.75);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 15vh;
+      left: 5%;
+      transform: translateY(-400%);
+      transition: transform 1s ease-in; }
+      .navbar__links .link {
+        margin: 30px; }
+      .navbar__links .line {
+        display: block;
+        width: 80%;
+        height: 1px;
+        background-color: var(--GrayishBlue); }
+    .navbar__links.active {
+      transform: translateY(0%);
+      transition: transform 1s ease-in; }
+    .navbar__hamburger {
+      display: block; } }
+.hero {
+  width: 100%;
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; }
+  .hero__container {
+    width: 100%;
+    height: 95%;
+    max-width: 1200px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .hero__container__texts {
+      width: 500px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column; }
+      .hero__container__texts__info {
+        font-family: var(--Barlow);
+        font-weight: 400;
+        color: var(--GrayishBlue);
+        margin-bottom: 10px; }
+        .hero__container__texts__info .icon {
+          display: inline-block;
+          width: 50px;
+          height: 25px;
+          text-align: center;
+          background-color: var(--VeryDarkBlue);
+          border-radius: 10px;
+          color: var(--White);
+          font-family: var(--BarlowCondensed);
+          font-weight: 600;
+          letter-spacing: 1px; }
+      .hero__container__texts__title {
+        color: var(--VeryDarkBlue);
+        font-family: var(--BarlowCondensed);
+        letter-spacing: 1px;
+        font-size: 55px;
+        margin-bottom: 10px; }
+      .hero__container__texts__description {
+        width: 55%;
+        color: var(--GrayishBlue);
+        font-family: var(--BarlowCondensed);
+        font-weight: 400;
+        margin-bottom: 30px; }
+    .hero__container__img {
+      position: absolute;
+      right: -290px; }
+
+@media (max-width: 800px) {
+  .hero {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .hero__container {
+      width: 100%;
+      max-width: 600px;
+      height: 95%;
+      display: flex;
+      flex-direction: column-reverse; }
+      .hero__container__img {
+        width: 100%;
+        height: 100%;
+        position: relative; }
+        .hero__container__img img {
+          width: 100%;
+          height: 90%;
+          position: absolute;
+          right: 235px; }
+      .hero__container__texts {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 40px;
+        margin-left: 25px; }
+        .hero__container__texts__title {
+          font-size: 35px;
+          margin: 5px; }
+        .hero__container__texts__description {
+          width: 60%;
+          margin: 5px; }
+        .hero__container__texts__btns {
+          margin-top: 10px; } }
+
+/*# sourceMappingURL=styles.css.map */
